@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: #333;
+  color: #fff;
+  line-height: 1.6;
+}
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  /* cover the whole screen */
+  height: 100vh;
+  width: 100vw;
+}
+
+.slide {
+  /* put the slide on the whole screen */
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  /* make it invisible */
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.slide.current {
+  opacity: 1;
+}
+
+.slide .content {
+  position: absolute;
+  bottom: 40px;
+  /* push this off the screen to the left */
+  left: -600px; /*set this to "0" to see it on the screen for testing*/
+  /* hide the content off the screen */
+  opacity: 0;
+  width: 600px;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #333;
+  padding: 35px;
+}
+
+.slide .content h1 {
+  margin-bottom: 10px;
+}
+
+/* move and show the current content */
+.slide.slide.current .content {
+  opacity: 1;
+  /* move the content back to the screen ie 600px to the right */
+  transform: translate(600px);
+  /* change all properties */
+  transition: all 0.7s ease-in-out 0.3;
+}
+
+.buttons button#next {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+}
+
+.buttons button#prev {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+}
+
+.buttons button {
+  border: 2px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  padding: 13px 15px;
+  /* make the buttons circle */
+  border-radius: 50%;
+  outline: none;
+}
+
+.buttons button:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+@media (max-width: 500px) {
+  .slide .content {
+    bottom: -300px;
+    left: 0;
+    width: 100%;
+  }
+
+  .slide.current .content {
+    /* transform: translateY(-300px); */
+    -ms-transform-origin-y: translateY(-600px);
+  }
+}
+
+/* Background Images for the .slide class*/
+
+.slide:first-child {
+  background: url("../img/photo1.jpg") no-repeat center center/cover;
+}
+.slide:nth-child(2) {
+  background: url("../img/photo2.jpg") no-repeat center top/cover;
+}
+.slide:nth-child(3) {
+  background: url("../img/photo3.jpg") no-repeat center top/cover;
+}
+.slide:nth-child(4) {
+  background: url("../img/photo4.jpg") no-repeat center top/cover;
+}
+.slide:nth-child(5) {
+  background: url("../img/photo5.jpg") no-repeat center top/cover;
+}
+.slide:nth-child(6) {
+  background: url("../img/photo6.jpg") no-repeat center top/cover;
+}
