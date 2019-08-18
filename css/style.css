@@ -50,17 +50,36 @@ body {
   padding: 35px;
 }
 
+.slide-right-anime {
+  /* Keiseon's tweek (^_^) */
+  -webkit-animation: slide 1s forwards; /* 0.5s*/
+  -webkit-animation-delay: 0.5s; /*2s*/
+
+  animation: slide 1s forwards;
+  animation-delay: 0.5s;
+}
+
+/* Keiseon's Animation tweek (^_^) */
+@-webkit-keyframes slide {
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes slide {
+  100% {
+    left: 0;
+  }
+}
+/* -------------------------------------- */
 .slide .content h1 {
   margin-bottom: 10px;
 }
 
 /* move and show the current content */
 .slide.slide.current .content {
+  /* make the content visible again */
   opacity: 1;
-  /* move the content back to the screen ie 600px to the right */
-  transform: translate(600px);
-  /* change all properties */
-  transition: all 0.7s ease-in-out 0.3;
 }
 
 .buttons button#next {
@@ -98,9 +117,17 @@ body {
     width: 100%;
   }
 
-  .slide.current .content {
-    /* transform: translateY(-300px); */
-    -ms-transform-origin-y: translateY(-600px);
+  /* Keiseon's Animation tweek (^_^) */
+  @-webkit-keyframes slide {
+    100% {
+      bottom: 0;
+    }
+  }
+
+  @keyframes slide {
+    100% {
+      bottom: 0;
+    }
   }
 }
 
